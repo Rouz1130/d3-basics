@@ -44,10 +44,13 @@
 
         var circles = canvas.selectAll("circle")
             .data(data)
+            .attr("fill", "red")
             .enter()
                 .append("circle")
                 .attr("cx", 50)
                 .attr("cy", 50)
+                .attr("fill", "green")
+                
                 .attr("r", 25);
 
 

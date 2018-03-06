@@ -41,11 +41,9 @@
 
         circle.transition()
             .duration(1500)
+            .delay(1000)
             .attr("cx", 150)
-            .transition()
-            .attr("cy", 200)
-            .transition()
-            .attr("cx", 50);   
+            .each("start", function () { d3.select(this).attr("fill", "red"); });
 
 
     </script>

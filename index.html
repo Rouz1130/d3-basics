@@ -23,10 +23,7 @@
             </script> -->
 
     <script>
-        //Enter, Updtate, Exit 
-        // DOM elements < data elements (enter)
-        // DOM elements > data elements (exit)
-        // DOM elements = data elements (update)
+        //transitions
         
         var data = [10];
 
@@ -37,22 +34,14 @@
 
 
 
-        var circle1 = canvas.append("circle")
+        var circle = canvas.append("circle")
                 .attr("cx", 50)
                 .attr("cy", 100)
                 .attr("r", 25);
 
-        var circle2 = canvas.append("circle")
-                .attr("cx", 50)
-                .attr("cy", 200)
-                .attr("r", 25);        
+        circle.transition()
+            .attr("cx", 150);        
 
-       //Red fill represents update         
-        var circles = canvas.selectAll("circle")
-            .data(data)
-            .attr("fill","green")
-            .exit()
-                .attr("fill", "blue");
 
     </script>
 

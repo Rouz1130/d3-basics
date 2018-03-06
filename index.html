@@ -41,7 +41,9 @@
 
 
         //Axis
+        //ticks - how many spaces we want on our axis
         var axis = d3.svg.axis()
+                .ticks(5)
                 .scale(widthScale)
                 
         // canvas is template
@@ -51,7 +53,7 @@
             .attr("height", height )
             .append("g")
             .attr("transform", "translate(20, 0)")
-            .call(axis);
+            
 
         //Our Bar with returning functions
         var bars = canvas.selectAll("rect")
@@ -62,6 +64,13 @@
             .attr("height", 50)
             .attr("fill", function (d) { return color(d) })
             .attr("y", function (d, i) { return i * 100 });
+
+
+        // Moves our Axis element: in our case its to the bottom of page know. 
+        //Change the values of translate to move axis on an area of page.    
+        canvas.append("g")
+            .attr("transform", "translate(0, 400)")
+            .call(axis);
 
 
     </script>
